@@ -1,3 +1,8 @@
+
+// Creativity:
+// I added a mood rating system (1-10) to each journal entry so  user can track emotional state as they make entries into the journal.
+// I also updated how entries are shown, saved, and loaded so the mood score stays saved and shows up on screen.
+
 using System;
 class Program
 {
