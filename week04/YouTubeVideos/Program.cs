@@ -10,37 +10,35 @@ class Program
         Video video2 = new Video("Top 10 EV Conversions", "CleanMobility", 840);
         Video video3 = new Video("Intro to PySide6", "TechDev", 450);
 
-        // 2. Add 3-4 comments to Video 1
-        video1.Comments.Add(new Comment("Alice", "Great explanation of classes!"));
-        video1.Comments.Add(new Comment("Bob", "Very helpful, thank you."));
-        video1.Comments.Add(new Comment("Charlie", "Can you cover interfaces next?"));
+        // 2. Add comments using the AddComment method
+        video1.AddComment(new Comment("Alice", "Great explanation of classes!"));
+        video1.AddComment(new Comment("Bob", "Very helpful, thank you."));
+        video1.AddComment(new Comment("Charlie", "Can you cover interfaces next?"));
 
-        // Add 3-4 comments to Video 2
-        video2.Comments.Add(new Comment("David", "Awesome progress on green tech."));
-        video2.Comments.Add(new Comment("Eve", "Super interesting topic."));
-        video2.Comments.Add(new Comment("Frank", "Looking forward to more videos like this."));
+        video2.AddComment(new Comment("David", "Awesome progress on green tech."));
+        video2.AddComment(new Comment("Eve", "Super interesting topic."));
+        video2.AddComment(new Comment("Frank", "Looking forward to more videos like this."));
 
-        // Add 3-4 comments to Video 3
-        video3.Comments.Add(new Comment("Grace", "PySide6 is so smooth to work with."));
-        video3.Comments.Add(new Comment("Heidi", "Clear and concise explanation."));
-        video3.Comments.Add(new Comment("Ivan", "Helped me fix my GUI layout!"));
+        video3.AddComment(new Comment("Grace", "PySide6 is so smooth to work with."));
+        video3.AddComment(new Comment("Heidi", "Clear and concise explanation."));
+        video3.AddComment(new Comment("Ivan", "Helped me fix my GUI layout!"));
 
         // 3. Put videos in a list
         List<Video> videoList = new List<Video> { video1, video2, video3 };
 
-        // 4. Iterate and display information
+        // 4. Iterate and display information using getter methods
         foreach (Video video in videoList)
         {
             Console.WriteLine("-------------------------------------------------");
-            Console.WriteLine($"Title: {video.Title}");
-            Console.WriteLine($"Author: {video.Author}");
-            Console.WriteLine($"Length: {video.LengthInSeconds} seconds");
+            Console.WriteLine($"Title: {video.GetTitle()}");
+            Console.WriteLine($"Author: {video.GetAuthor()}");
+            Console.WriteLine($"Length: {video.GetLengthInSeconds()} seconds");
             Console.WriteLine($"Number of Comments: {video.GetCommentCount()}");
             Console.WriteLine("Comments:");
 
-            foreach (Comment comment in video.Comments)
+            foreach (Comment comment in video.GetComments())
             {
-                Console.WriteLine($" - {comment.Name}: \"{comment.Text}\"");
+                Console.WriteLine($" - {comment.GetName()}: \"{comment.GetText()}\"");
             }
             Console.WriteLine();
         }
