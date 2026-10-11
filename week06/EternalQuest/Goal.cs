@@ -1,5 +1,6 @@
 using System;
 
+// abstract class Goal
 public abstract class Goal
 {
     private string _shortName;

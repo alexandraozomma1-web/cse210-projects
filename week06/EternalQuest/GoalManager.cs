@@ -171,7 +171,7 @@ public class GoalManager
     }
     else
     {
-        // If they typed text instead of a number, guide them gently!
+        
         Console.WriteLine("Please type the *number* of the goal (e.g., 1), not its name.");
     }
 }
